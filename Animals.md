@@ -6,14 +6,10 @@
 > * Human
 > * JavaRhinoceros
 > * BengalTiger
-> * T-Rex
 > * KomodoDragon
 > * BoaConstructor
-> * Pangolin
-> * Worm
 > * BalistaSpider
-> * GoldenPoisonFrog
-> * Grizly
+
 
 
 ## Aquatic Animals
