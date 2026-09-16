@@ -19,7 +19,7 @@ public class Chiken extends AerialAnimal implements AnimalDescription {
     }
 
     public String description (){
-        return "A magnificent Late Cretaceous pterosaur the size of a giraffe, this giant of the skies requires a vast open-air enclosure and makes a truly awe-inspiring, high-flying centerpiece for the most ambitious caretakers.";
+        return "The chicken is a domesticated bird that is widely kept for its meat and eggs. It is known for its distinctive clucking sound, feathered body, and ability to lay eggs regularly. Chickens are social animals that can be found in various breeds, each with unique characteristics and appearances.";
     }
 
 }

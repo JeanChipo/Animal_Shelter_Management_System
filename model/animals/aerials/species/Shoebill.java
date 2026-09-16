@@ -19,6 +19,6 @@ public class Shoebill extends AerialAnimal implements AnimalDescription {
     }
 
     public String description (){
-        return "A magnificent Late Cretaceous pterosaur the size of a giraffe, this giant of the skies requires a vast open-air enclosure and makes a truly awe-inspiring, high-flying centerpiece for the most ambitious caretakers.";
+        return "The Shoebill is a large, prehistoric-looking bird with a massive shoe-shaped bill. It is known for its slow movements and can be found in the swamps and wetlands of East Africa. This bird requires a spacious enclosure with water features and plenty of hiding spots to mimic its natural habitat.";
     }
 }

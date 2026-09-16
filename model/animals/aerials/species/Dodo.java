@@ -19,6 +19,6 @@ public class Dodo extends AerialAnimal implements AnimalDescription {
     }
 
     public String description (){
-        return "A magnificent Late Cretaceous pterosaur the size of a giraffe, this giant of the skies requires a vast open-air enclosure and makes a truly awe-inspiring, high-flying centerpiece for the most ambitious caretakers.";
+        return "The dodo is a flightless bird that was endemic to the island of Mauritius. It is known for its large size, distinctive appearance, and extinction in the late 17th century due to human activities. The dodo has become a symbol of extinct species and serves as a reminder of the importance of conservation efforts.";
     }
 }
