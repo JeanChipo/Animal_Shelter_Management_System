@@ -1,4 +1,4 @@
-package data.traitment;
+package data.treatment;
 
 import model.animals.Animal;
 
