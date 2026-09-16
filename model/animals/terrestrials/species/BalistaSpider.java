@@ -47,6 +47,7 @@ public class BalistaSpider extends TerrestrialAnimal implements AnimalDescriptio
             }
             export+="#";
         }
+        return export;
     }
 
 }

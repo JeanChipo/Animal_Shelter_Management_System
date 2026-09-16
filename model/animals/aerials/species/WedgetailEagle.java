@@ -4,6 +4,8 @@ import model.animals.AnimalDescription;
 import model.animals.aerials.AerialAnimal;
 
 import java.util.Date;
+import java.util.List;
+import java.util.ArrayList;
 
 public class WedgetailEagle extends AerialAnimal implements AnimalDescription {
     private String specificites;
@@ -20,5 +22,31 @@ public class WedgetailEagle extends AerialAnimal implements AnimalDescription {
 
     public String description (){
         return "The wedge-tailed eagle is a large bird of prey native to Australia and parts of New Guinea. It is known for its distinctive wedge-shaped tail, which gives it its name. These eagles are powerful hunters, capable of taking down a variety of prey, including mammals, birds, and reptiles. They are also known for their impressive soaring abilities and can often be seen gliding high in the sky. Wedge-tailed eagles are an iconic species in Australia and are often associated with the country's wilderness and natural beauty.";
+    }
+
+    public String getSpecificites() {
+        return specificites;
+    }
+
+    public String toStore(){
+        String export = "";
+        List<Object> selfData = new ArrayList<>();
+        selfData.add(this.getName());
+        selfData.add(this.getAdress());
+        selfData.add(this.getArrivalDate());
+        selfData.add(this.isAdopted());
+        selfData.add(this.getAge());
+        selfData.add(this.getBloodType());
+        selfData.add(this.getCanFly());
+        selfData.add(this.getSpecificites());
+        for(Object data : selfData){
+            if(data instanceof String){
+                export+= data;
+            }else{
+                export+=data.toString();
+            }
+            export+="#";
+        }
+        return export;
     }
 }

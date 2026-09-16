@@ -47,5 +47,6 @@ public class KomodoDragon extends TerrestrialAnimal implements AnimalDescription
             }
             export+="#";
         }
+        return export;
     }
 }

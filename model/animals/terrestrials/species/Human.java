@@ -47,6 +47,7 @@ public class Human extends TerrestrialAnimal implements AnimalDescription {
             }
             export+="#";
         }
+        return export;
     }
 
 }

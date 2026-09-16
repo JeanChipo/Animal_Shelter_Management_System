@@ -4,6 +4,8 @@ import model.animals.AnimalDescription;
 import model.animals.aerials.AerialAnimal;
 
 import java.util.Date;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Chiken extends AerialAnimal implements AnimalDescription {
     private String specificites;
@@ -20,6 +22,32 @@ public class Chiken extends AerialAnimal implements AnimalDescription {
 
     public String description (){
         return "The chicken is a domesticated bird that is widely kept for its meat and eggs. It is known for its distinctive clucking sound, feathered body, and ability to lay eggs regularly. Chickens are social animals that can be found in various breeds, each with unique characteristics and appearances.";
+    }
+
+    public String getSpecificites() {
+        return specificites;
+    }
+
+    public String toStore(){
+        String export = "";
+        List<Object> selfData = new ArrayList<>();
+        selfData.add(this.getName());
+        selfData.add(this.getAdress());
+        selfData.add(this.getArrivalDate());
+        selfData.add(this.isAdopted());
+        selfData.add(this.getAge());
+        selfData.add(this.getBloodType());
+        selfData.add(this.getCanFly());
+        selfData.add(this.getSpecificites());
+        for(Object data : selfData){
+            if(data instanceof String){
+                export+= data;
+            }else{
+                export+=data.toString();
+            }
+            export+="#";
+        }
+        return export;
     }
 
 }

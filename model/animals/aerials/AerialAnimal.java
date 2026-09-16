@@ -10,4 +10,8 @@ public abstract class AerialAnimal extends Animal {
         super(name,adress,arrivalDate,adopted,age,bloodType,"Aerial");
         this.canFly = canFly;
     }
+
+    public boolean getCanFly(){
+        return canFly;
+    }
 }

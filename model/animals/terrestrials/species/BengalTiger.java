@@ -47,5 +47,6 @@ public class BengalTiger extends TerrestrialAnimal implements AnimalDescription 
             }
             export+="#";
         }
+        return export;
     }
 }

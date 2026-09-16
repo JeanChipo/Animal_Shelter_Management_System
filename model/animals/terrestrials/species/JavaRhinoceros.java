@@ -47,5 +47,6 @@ public class JavaRhinoceros extends TerrestrialAnimal implements AnimalDescripti
             }
             export+="#";
         }
+        return export;
     }
 }
