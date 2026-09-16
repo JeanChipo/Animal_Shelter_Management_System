@@ -9,12 +9,12 @@ public class JavaRhinoceros extends TerrestrialAnimal implements AnimalDescripti
     private String specificites;
 
     public JavaRhinoceros (String name, String adress, Date arrivalDate, boolean adopted, int age, String bloodType){
-        super(name, adress, arrivalDate, adopted, age, bloodType, mammal);
+        super(name, adress, arrivalDate, adopted, age, bloodType, "mammal");
         this.specificites = null;
     }
 
     public JavaRhinoceros (String name, String adress, Date arrivalDate, boolean adopted, int age, String bloodType, String specificities){
-        super(name, adress, arrivalDate, adopted, age, bloodType, mammal);
+        super(name, adress, arrivalDate, adopted, age, bloodType, "mammal");
         this.specificites = specificities;
     }
 

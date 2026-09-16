@@ -9,12 +9,12 @@ public class BengalTiger extends TerrestrialAnimal implements AnimalDescription 
     private String specificites;
 
     public BengalTiger (String name, String adress, Date arrivalDate, boolean adopted, int age, String bloodType){
-        super(name, adress, arrivalDate, adopted, age, bloodType, feline);
+        super(name, adress, arrivalDate, adopted, age, bloodType, "feline");
         this.specificites=null;
     }
 
     public BengalTiger (String name, String adress, Date arrivalDate, boolean adopted, int age, String bloodType, String specificities){
-        super(name, adress, arrivalDate, adopted, age, bloodType, feline);
+        super(name, adress, arrivalDate, adopted, age, bloodType, "feline");
         this.specificites=specificities;
     }
 

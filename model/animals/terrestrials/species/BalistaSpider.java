@@ -9,12 +9,12 @@ public class BalistaSpider extends TerrestrialAnimal implements AnimalDescriptio
     private String specificites;
 
     public BalistaSpider (String name, String adress, Date arrivalDate, boolean adopted, int age, String bloodType){
-        super(name, adress, arrivalDate, adopted, age, bloodType, arachnid);
+        super(name, adress, arrivalDate, adopted, age, bloodType, "arachnid");
         this.specificites = null;
     }
 
     public BalistaSpider (String name, String adress, Date arrivalDate, boolean adopted, int age, String bloodType, String specificities){
-        super(name, adress, arrivalDate, adopted, age, bloodType, arachnid);
+        super(name, adress, arrivalDate, adopted, age, bloodType, "arachnid");
         this.specificites = specificities;
     }
 

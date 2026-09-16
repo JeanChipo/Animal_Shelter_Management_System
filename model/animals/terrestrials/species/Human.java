@@ -9,12 +9,12 @@ public class Human extends TerrestrialAnimal implements AnimalDescription {
     private String specificites;
 
     public Human (String name, String adress, Date arrivalDate, boolean adopted, int age, String bloodType){
-        super(name, adress, arrivalDate, adopted, age, bloodType, mammal);
+        super(name, adress, arrivalDate, adopted, age, bloodType, "mammal");
         this.specificites = null;
     }
 
     public Human (String name, String adress, Date arrivalDate, boolean adopted, int age, String bloodType, String specificities){
-        super(name, adress, arrivalDate, adopted, age, bloodType, mammal);
+        super(name, adress, arrivalDate, adopted, age, bloodType, "mammal");
         this.specificites = specificities;
     }
 
