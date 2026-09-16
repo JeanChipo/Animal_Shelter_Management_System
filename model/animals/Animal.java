@@ -92,5 +92,5 @@ public abstract class Animal {
         return animalCount;
     }
 
-
+    public abstract String toStore();
 }

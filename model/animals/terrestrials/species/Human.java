@@ -28,6 +28,7 @@ public class Human extends TerrestrialAnimal implements AnimalDescription {
         return specificites;
     }
 
+    @Override
     public String toStore(){
         String export = "";
         List<Object> selfData = new ArrayList<>();

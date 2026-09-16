@@ -2,12 +2,13 @@ package model.animals.terrestrials.species;
 
 import model.animals.AnimalDescription;
 import model.animals.terrestrials.TerrestrialAnimal;
+import data.treatment.Storable;
 
 import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
 
-public class BalistaSpider extends TerrestrialAnimal implements AnimalDescription {
+public class BalistaSpider extends TerrestrialAnimal implements AnimalDescription, Storable {
     private String specificites;
 
     public BalistaSpider (String name, String adress, Date arrivalDate, boolean adopted, int age, String bloodType){
@@ -28,6 +29,7 @@ public class BalistaSpider extends TerrestrialAnimal implements AnimalDescriptio
         return specificites;
     }
 
+    @Override 
     public String toStore(){
         String export = "";
         List<Object> selfData = new ArrayList<>();

@@ -28,6 +28,7 @@ public class JavaRhinoceros extends TerrestrialAnimal implements AnimalDescripti
         return specificites;
     }
 
+    @Override
     public String toStore(){
         String export = "";
         List<Object> selfData = new ArrayList<>();
