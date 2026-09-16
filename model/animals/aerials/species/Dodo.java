@@ -5,16 +5,16 @@ import model.animals.aerials.AerialAnimal;
 
 import java.util.Date;
 
-public class Quetzalcoatlus extends AerialAnimal implements AnimalDescription {
+public class Dodo extends AerialAnimal implements AnimalDescription {
     private String specificites;
 
-    public Quetzalcoatlus (String name, String adress, Date arrivalDate, boolean adopted, int age, String bloodType){
-        super(name, adress, arrivalDate, adopted, age, bloodType, true);
+    public Dodo (String name, String adress, Date arrivalDate, boolean adopted, int age, String bloodType){
+        super(name, adress, arrivalDate, adopted, age, bloodType, false);
         this.specificites=null;
     }
 
-    public Quetzalcoatlus (String name, String adress, Date arrivalDate, boolean adopted, int age, String bloodType, String specificities){
-        super(name, adress, arrivalDate, adopted, age, bloodType, true);
+    public Dodo (String name, String adress, Date arrivalDate, boolean adopted, int age, String bloodType, String specificities){
+        super(name, adress, arrivalDate, adopted, age, bloodType, false);
         this.specificites=specificities;
     }
 

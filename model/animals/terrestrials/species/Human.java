@@ -35,7 +35,7 @@ public class Human extends TerrestrialAnimal implements AnimalDescription {
         selfData.add(this.getAdress());
         for(Object data : selfData){
             if(data instanceof String){
-                export+= data;
+                export+=data;
             }else{
                 export+=data.toString();
             }

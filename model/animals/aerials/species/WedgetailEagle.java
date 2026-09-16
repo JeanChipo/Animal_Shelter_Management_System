@@ -5,15 +5,15 @@ import model.animals.aerials.AerialAnimal;
 
 import java.util.Date;
 
-public class Quetzalcoatlus extends AerialAnimal implements AnimalDescription {
+public class WedgetailEagle extends AerialAnimal implements AnimalDescription {
     private String specificites;
 
-    public Quetzalcoatlus (String name, String adress, Date arrivalDate, boolean adopted, int age, String bloodType){
+    public WedgetailEagle (String name, String adress, Date arrivalDate, boolean adopted, int age, String bloodType){
         super(name, adress, arrivalDate, adopted, age, bloodType, true);
         this.specificites=null;
     }
 
-    public Quetzalcoatlus (String name, String adress, Date arrivalDate, boolean adopted, int age, String bloodType, String specificities){
+    public WedgetailEagle (String name, String adress, Date arrivalDate, boolean adopted, int age, String bloodType, String specificities){
         super(name, adress, arrivalDate, adopted, age, bloodType, true);
         this.specificites=specificities;
     }
