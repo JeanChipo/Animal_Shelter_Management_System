@@ -56,7 +56,7 @@ public abstract class Animal {
       ///////////////////
      //GETTERS ANIMAL///
     //////////////////
-    public int getAnimalId{
+    public int getAnimalId(){
         return animalId;
     }
 
@@ -88,7 +88,7 @@ public abstract class Animal {
         return type;
     }
 
-    public static int getAnimalCount{
+    public static int getAnimalCount(){
         return animalCount;
     }
 
