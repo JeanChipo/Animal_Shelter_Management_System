@@ -88,7 +88,7 @@ public abstract class Animal {
         return type;
     }
 
-    public int getAnimalCount{
+    public static int getAnimalCount{
         return animalCount;
     }
 
