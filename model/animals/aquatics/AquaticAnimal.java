@@ -10,4 +10,8 @@ public abstract class AquaticAnimal extends Animal {
         super(name,adress,arrivalDate,adopted,age,bloodType,"Aquatic");
         this.scales = scales;
     }
+
+    public boolean getScales(){
+        return scales;
+    }
 }
