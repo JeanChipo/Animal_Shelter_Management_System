@@ -4,6 +4,8 @@ import model.animals.AnimalDescription;
 import model.animals.terrestrials.TerrestrialAnimal;
 
 import java.util.Date;
+import java.util.List;
+import java.util.ArrayList;
 
 public class BengalTiger extends TerrestrialAnimal implements AnimalDescription {
     private String specificites;
