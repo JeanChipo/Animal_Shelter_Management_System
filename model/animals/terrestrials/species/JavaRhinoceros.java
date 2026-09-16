@@ -31,6 +31,12 @@ public class JavaRhinoceros extends TerrestrialAnimal implements AnimalDescripti
         List<Object> selfData = new ArrayList<>();
         selfData.add(this.getName());
         selfData.add(this.getAdress());
+        selfData.add(this.getArrivalDate());
+        selfData.add(this.isAdopted());
+        selfData.add(this.getAge());
+        selfData.add(this.getBloodType());
+        selfData.add(this.getSubType());
+        selfData.add(this.getSpecificites());
         for(Object data : selfData){
             if(data instanceof String){
                 export+= data;
