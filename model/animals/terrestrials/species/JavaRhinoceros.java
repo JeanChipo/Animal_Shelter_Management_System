@@ -21,4 +21,23 @@ public class JavaRhinoceros extends TerrestrialAnimal implements AnimalDescripti
     public String description (){
         return "The Javan rhinoceros is a critically endangered species of rhinoceros native to Indonesia. It is the rarest of the five rhino species and is known for its single horn and thick skin.";
     }
+
+    public String getSpecificites() {
+        return specificites;
+    }
+
+    public String toStore(){
+        String export = "";
+        List<Object> selfData = new ArrayList<>();
+        selfData.add(this.getName());
+        selfData.add(this.getAdress());
+        for(Object data : selfData){
+            if(data instanceof String){
+                export+= data;
+            }else{
+                export+=data.toString();
+            }
+            export+="#";
+        }
+    }
 }

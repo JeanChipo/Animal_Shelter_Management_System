@@ -21,4 +21,23 @@ public class KomodoDragon extends TerrestrialAnimal implements AnimalDescription
     public String description (){
         return "The Komodo dragon is the world's largest living lizard, a formidable apex predator native to the Indonesian islands.";
     }
+
+    public String getSpecificites() {
+        return specificites;
+    }
+
+    public String toStore(){
+        String export = "";
+        List<Object> selfData = new ArrayList<>();
+        selfData.add(this.getName());
+        selfData.add(this.getAdress());
+        for(Object data : selfData){
+            if(data instanceof String){
+                export+= data;
+            }else{
+                export+=data.toString();
+            }
+            export+="#";
+        }
+    }
 }

@@ -5,7 +5,7 @@ import model.animals.aerials.AerialAnimal;
 
 import java.util.Date;
 
-public class Quetzalcoatlus extends AerialAnimal implements AnimalDescription {
+public class Quetzalcoatlus extends TerrestrialAnimal implements AnimalDescription {
     private String specificites;
 
     public Quetzalcoatlus (String name, String adress, Date arrivalDate, boolean adopted, int age, String bloodType){

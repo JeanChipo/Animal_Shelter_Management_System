@@ -21,4 +21,24 @@ public class BalistaSpider extends TerrestrialAnimal implements AnimalDescriptio
     public String description (){
         return "The Balista spider is a fascinating arachnid known for its unique hunting techniques and intricate web structures. It is a nocturnal predator that primarily feeds on insects.";
     }
+
+    public String getSpecificites() {
+        return specificites;
+    }
+
+    public String toStore(){
+        String export = "";
+        List<Object> selfData = new ArrayList<>();
+        selfData.add(this.getName());
+        selfData.add(this.getAdress());
+        for(Object data : selfData){
+            if(data instanceof String){
+                export+= data;
+            }else{
+                export+=data.toString();
+            }
+            export+="#";
+        }
+    }
+
 }

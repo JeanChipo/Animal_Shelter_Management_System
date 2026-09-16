@@ -21,4 +21,23 @@ public class BengalTiger extends TerrestrialAnimal implements AnimalDescription 
     public String description (){
         return "The Bengal tiger is a majestic and powerful big cat native to the Indian subcontinent. It is known for its striking orange coat with black stripes and is an apex predator in its habitat.";
     }
+
+    public String getSpecificites() {
+        return specificites;
+    }
+
+    public String toStore(){
+        String export = "";
+        List<Object> selfData = new ArrayList<>();
+        selfData.add(this.getName());
+        selfData.add(this.getAdress());
+        for(Object data : selfData){
+            if(data instanceof String){
+                export+= data;
+            }else{
+                export+=data.toString();
+            }
+            export+="#";
+        }
+    }
 }

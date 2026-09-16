@@ -24,6 +24,10 @@ public class Human extends TerrestrialAnimal implements AnimalDescription {
         return "Humans are bipedal primates known for their intelligence and complex social structures. They have a wide range of physical characteristics and are capable of creating and using tools.";
     }
 
+    public String getSpecificites() {
+        return specificites;
+    }
+
     public String toStore(){
         String export = "";
         List<Object> selfData = new ArrayList<>();
@@ -38,4 +42,5 @@ public class Human extends TerrestrialAnimal implements AnimalDescription {
             export+="#";
         }
     }
+
 }

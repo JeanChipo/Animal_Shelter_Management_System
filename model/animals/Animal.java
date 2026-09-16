@@ -35,6 +35,62 @@ public abstract class Animal {
             this.skin = skin;
             this.strength = strength;
         }
+
+          ///////////////////
+         //GETTERS STATS///
+        /////////////////
+        public double getSpeed(){
+            return speed;
+        }
+
+        public String getSkin(){
+            return skin;
+        }
+
+        public double getStrength(){
+            return strength;
+        }
+
     }
+
+      ///////////////////
+     //GETTERS ANIMAL///
+    //////////////////
+    public int getAnimalId{
+        return animalId;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public String getAdress(){
+        return adress;
+    }
+
+    public Date getArrivalDate(){
+        return arrivalDate;
+    }
+
+    public boolean isAdopted(){
+        return adopted;
+    }
+
+    public int getAge(){
+        return age;
+    }
+
+    public String getBloodType(){
+        return bloodType;
+    }
+
+    public String getType(){
+        return type;
+    }
+
+    public int getAnimalCount{
+        return animalCount;
+    }
+
 
 }
