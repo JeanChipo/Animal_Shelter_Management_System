@@ -21,7 +21,9 @@ public class dataCollection {
     }
 
     public static void verifyEntry(Animal animal) throws IllegalArgumentException {
-        switch (animal.getType()) { // getType should return the type of the animal (aerial / aquatic / terrestrial)
+        String type = animal.getType() == null ? "" : animal.getType().toLowerCase();
+
+        switch (type) {
             case "aerial":
                 String dataAerial = animal.toStore();
                 if (false) {    // conditions are to be determined
@@ -83,7 +85,7 @@ public class dataCollection {
     }
 
     
-    public void removeAnimal(Animal animal) throws NoSuchElementException {
+    public void removeAnimalEntry(Animal animal) throws NoSuchElementException {
         /*
         remove from the animal hashset, NOT THE DATABASE
         */
@@ -92,12 +94,25 @@ public class dataCollection {
         System.out.println( (removed == true) ? "Animal removed" : "Animal not found");
     }
 
+    public String listDataBase(String filePath) {
+        File db = new File(filePath);
+        String output = "";
+
+        try (Scanner scanner = new Scanner(db)) {
+            while (scanner.hasNextLine()) {
+                output += (scanner.nextLine()) + '\n';
+            }
+        } catch (FileNotFoundException e) {
+            throw new NoSuchElementException("Database not found");
+        }
+        return output;
+    }
 
     // todo :
     /* X inserer dans le txt (type + f° de typage)
      * X retirer dans le txt
      * X update dans le txt
-     *[] lire le txt
+     * X lire le txt
     */ 
 
 
