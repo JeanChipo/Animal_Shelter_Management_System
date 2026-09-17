@@ -4,13 +4,13 @@ import model.animals.AnimalDescription;
 import model.animals.aquatics.AquaticAnimal;
 
 import java.util.Date;
-import java.util.Lists;
+import java.util.List;
 import java.util.ArrayList;
 
 public class MantisShrimp extends AquaticAnimal implements AnimalDescription {
     public String specificites;
 
-    public MantisShrimp(String name, Date dateOfBirth, AnimalDescription description, boolean adopted, int age, String bloodType) {
+    public MantisShrimp(String name, String adress, Date arrivalDate, Date dateOfBirth, AnimalDescription description, boolean adopted, int age, String bloodType) {
         super(name, adress, arrivalDate, adopted, age, bloodType,false);
         this.specificites = null;
     }
@@ -28,6 +28,7 @@ public class MantisShrimp extends AquaticAnimal implements AnimalDescription {
         return specificites;
     }
 
+    @Override
     public String toStore(){
         String export = "";
         List<Object> selfData = new ArrayList<>();
