@@ -22,6 +22,7 @@ public class dataCollection {
         return id;
     }
 
+    // if more getters are needed, let me know
     public String getIdForAnimal(Animal animal, String filePath) {
         File db = new File(filePath);
         String animalData = animal.toStore();
@@ -167,23 +168,6 @@ public class dataCollection {
         }
     }
 
-    /* 
-    public void updateAnimalEntry(int Id, Object newAttribute) throws NoSuchElementException {
-        String path = "data/treatment/DataBase.txt";
-        File db = new File(path);
-        
-        try (Scanner scanner = new Scanner(db)) {
-            while (scanner.hasNextLine() || ) {
-
-                String nl = scanner.nextLine();
-            }
-        } catch (FileNotFoundException e) {
-            throw new NoSuchElementException("Database not found");
-        }
-    }
-    */
-    
-
     public String listDataBase(String filePath) {
         File db = new File(filePath);
         String output = "";
@@ -197,15 +181,4 @@ public class dataCollection {
         }
         return (output.isBlank()) ? "no animals found in database" : output;
     }
-
-    // todo :
-    /* X inserer dans le txt (type + f° de typage)
-     * X retirer dans le txt
-     * X update dans le txt
-     * X lire le txt
-     * [x] getters de la bdd
-     *  -> id done
-    */ 
-
-
 }

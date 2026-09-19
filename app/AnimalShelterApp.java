@@ -73,15 +73,14 @@ public class AnimalShelterApp {
                 switch (option) {
                         case VIEW:
                             System.out.println("view");
+                            // data.listDataBase(FILE_NAME);
                             return true;
                         case ADOPT:
                             System.out.println("adopt");
                             return true;
                         case ADD:
                             System.out.println("add");
-                            return true;
-                        case UPDATE:
-                            System.out.println("update");
+                            // data.addToDataBase(<la data à rajouter>);
                             return true;
                         case END:
                             return false;
