@@ -16,7 +16,7 @@ public class CareTask {
             careSet.add(animal);
         }
         else{
-            System.out.println("The volunteer dont have the skill to take care of this animal");
+            System.out.println("The volunteer dont have the skill to take care of this animal or they are not available");
         }
     }
 
