@@ -9,37 +9,108 @@ import java.io.IOException;
 import java.io.Writer;
 import java.io.FileNotFoundException;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 
 public class dataCollection {
     private HashSet<Animal> animals = new HashSet<>();
+    private static int id = 0;
 
-    public void addAnimal(Animal animal){
+    public int getCurrentId() {
+        return id;
+    }
+
+    public String getIdForAnimal(Animal animal, String filePath) {
+        File db = new File(filePath);
+        String animalData = animal.toStore();
+        try {
+            Scanner scanner = new Scanner(db);
+            while (scanner.hasNextLine()) {
+                String currentLine = scanner.nextLine();
+                if (currentLine.endsWith(animalData)) {
+                    int animalIdLength = currentLine.length() - animalData.length();
+                    String animalId = currentLine.substring(0, animalIdLength);
+                    scanner.close();
+                    return animalId;
+                }
+            }
+            scanner.close();
+        } catch (IOException e) {
+            System.out.println("Database not found");
+        }
+        return "";
+    }
+
+    public void addAnimal(Animal animal) {
+        /* 
+        adds to the animal hashset, NOT THE DATABASE
+        */
         animals.add(animal);
     }
 
-    public static void verifyEntry(Animal animal) throws IllegalArgumentException {
+    public void removeAnimal(Animal animal) throws NoSuchElementException {
+        /*
+        remove from the animal hashset, NOT THE DATABASE
+        */
+        boolean removed;
+        removed = animals.remove(animal);
+        System.out.println( (removed == true) ? "Animal removed" : "Animal not found");
+    }
+
+    public void displayAnimals() {
+        if (animals.isEmpty()) {
+            System.out.println("no animal found");
+            return;
+        }
+        Iterator<Animal> iterator = animals.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+    }
+    
+    public static void verifyEntry(Animal animal) throws InvalidEntryException {
         String type = animal.getType() == null ? "" : animal.getType().toLowerCase();
 
         switch (type) {
             case "aerial":
                 String dataAerial = animal.toStore();
-                if (false) {    // conditions are to be determined
-                    throw new IllegalArgumentException("invalid aerial animal entry");
+                if (animal.getName() == null 
+                        || animal.getName().isBlank()
+                        || animal.getAdress() == null 
+                        || animal.getAdress().isBlank()
+                        || animal.getArrivalDate() == null
+                        || animal.getAge() < 0
+                        || animal.getBloodType() == null 
+                        || animal.getBloodType().isBlank()) {
+                    throw new InvalidEntryException("invalid aerial animal entry");
                 }
                 break;
             case "aquatic":
                 String dataAquatic = animal.toStore();
-                if (false) {
-                    throw new IllegalArgumentException("invalid aquatic animal entry");
+                if (animal.getName() == null 
+                        || animal.getName().isBlank()
+                        || animal.getAdress() == null 
+                        || animal.getAdress().isBlank()
+                        || animal.getArrivalDate() == null
+                        || animal.getAge() < 0
+                        || animal.getBloodType() == null 
+                        || animal.getBloodType().isBlank()) {
+                    throw new InvalidEntryException("invalid aquatic animal entry");
                 }
                 break;
             case "terrestrial":
                 String dataTerrestrial = animal.toStore();
-                if (false) {
-                    throw new IllegalArgumentException("invalid terrestrial animal entry");
+                if (animal.getName() == null 
+                        || animal.getName().isBlank()
+                        || animal.getAdress() == null 
+                        || animal.getAdress().isBlank()
+                        || animal.getArrivalDate() == null
+                        || animal.getAge() < 0
+                        || animal.getBloodType() == null 
+                        || animal.getBloodType().isBlank()) {
+                    throw new InvalidEntryException("invalid terrestrial animal entry");
                 }
                 break;
             default:
@@ -51,12 +122,15 @@ public class dataCollection {
     public void addToDataBase(Animal animal) {
         String path = "data/treatment/DataBase.txt";
         try {
-            Writer db = new BufferedWriter(new FileWriter(path, true));
             verifyEntry(animal);
-            db.append(animal.toStore());
-            db.close();
-        } catch (IllegalArgumentException e) {
-            System.out.println("/!\\ Failed to add " + animal.getName() + " to database !");
+            try (Writer db = new BufferedWriter(new FileWriter(path, true))) {
+                db.append(id + animal.toStore());
+                db.append(System.lineSeparator());
+            }
+            id++;
+        } catch (InvalidEntryException e) {
+            String name = animal == null ? "animal" : animal.getName();
+            System.out.println("/!\\ Failed to add " + name + " to database !");
         } catch (IOException e) {
             System.out.println("Database not found");
         }
@@ -66,33 +140,49 @@ public class dataCollection {
     public void removeFromDataBase(Animal animal) throws NoSuchElementException{
         String path = "data/treatment/DataBase.txt";
         File db = new File(path);
-        if (!db.delete()) {
-            throw new NoSuchElementException("Animal not found in database !");
+        String animalData = animal.toStore();
+        String curLine = "";
+        String remainingData = "";
+        boolean removed = false;
+
+        try {
+            Scanner scanner = new Scanner(db);
+            while (scanner.hasNextLine()) {
+                curLine = scanner.nextLine();
+                if (!removed && curLine.endsWith(animalData)) {
+                    removed = true;
+                } else {
+                    remainingData += curLine + System.lineSeparator();
+                }
+            }
+            scanner.close();
+            if (!removed) {
+                throw new NoSuchElementException("Animal not found in database");
+            }
+            Writer writer = new BufferedWriter(new FileWriter(db, false));
+            writer.write(remainingData);
+            writer.close();
+        } catch (IOException e) {
+            throw new NoSuchElementException("Could not update database");
         }
     }
-    
-    public void updateAnimalEntry(Animal animal) throws NoSuchElementException {
+
+    /* 
+    public void updateAnimalEntry(int Id, Object newAttribute) throws NoSuchElementException {
         String path = "data/treatment/DataBase.txt";
         File db = new File(path);
         
         try (Scanner scanner = new Scanner(db)) {
-            while (scanner.hasNextLine()) {
-                String a = scanner.nextLine();
+            while (scanner.hasNextLine() || ) {
+
+                String nl = scanner.nextLine();
             }
         } catch (FileNotFoundException e) {
             throw new NoSuchElementException("Database not found");
         }
     }
-
+    */
     
-    public void removeAnimalEntry(Animal animal) throws NoSuchElementException {
-        /*
-        remove from the animal hashset, NOT THE DATABASE
-        */
-        boolean removed;
-        removed = animals.remove(animal);
-        System.out.println( (removed == true) ? "Animal removed" : "Animal not found");
-    }
 
     public String listDataBase(String filePath) {
         File db = new File(filePath);
@@ -100,12 +190,12 @@ public class dataCollection {
 
         try (Scanner scanner = new Scanner(db)) {
             while (scanner.hasNextLine()) {
-                output += (scanner.nextLine()) + '\n';
+                output += scanner.nextLine() + System.lineSeparator();
             }
         } catch (FileNotFoundException e) {
-            throw new NoSuchElementException("Database not found");
+            throw new NoSuchElementException("database not found");
         }
-        return output;
+        return (output.isBlank()) ? "no animals found in database" : output;
     }
 
     // todo :
@@ -113,6 +203,8 @@ public class dataCollection {
      * X retirer dans le txt
      * X update dans le txt
      * X lire le txt
+     * [x] getters de la bdd
+     *  -> id done
     */ 
 
 

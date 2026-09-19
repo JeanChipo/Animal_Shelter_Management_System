@@ -49,3 +49,5 @@ gradle-app.setting
 ######################################################################
 .DS_Store
 Thumbs.db
+data/treatment/dataCollection.java
+.vscode/settings.json

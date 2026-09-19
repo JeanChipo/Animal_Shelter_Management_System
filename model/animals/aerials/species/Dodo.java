@@ -12,7 +12,7 @@ public class Dodo extends AerialAnimal implements AnimalDescription {
 
     public Dodo (String name, String adress, Date arrivalDate, boolean adopted, int age, String bloodType){
         super(name, adress, arrivalDate, adopted, age, bloodType, false);
-        this.specificites=null;
+        this.specificites="";
     }
 
     public Dodo (String name, String adress, Date arrivalDate, boolean adopted, int age, String bloodType, String specificities){
