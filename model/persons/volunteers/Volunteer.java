@@ -3,9 +3,7 @@ package model.persons.volunteers;
 import model.animals.Animal;
 import model.persons.Person;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 public class Volunteer extends Person {
     private boolean availability;
@@ -49,6 +47,7 @@ public class Volunteer extends Person {
             String skill = iterator.next();
             if (skill.equals(animal.getType()) && availability){
                 takeCare = true;
+                availability = false;
             }
         }
         return takeCare;
