@@ -9,9 +9,9 @@ import java.util.Map;
 import java.util.Set;
 
 public class CareTask {
-    private Set<Animal> careSet = new HashSet<>();
+    private static Set<Animal> careSet = new HashSet<>();
 
-    public void takeCare(Volunteer volunteer, Animal animal){
+    public static void takeCare(Volunteer volunteer, Animal animal){
         if (volunteer.canTakeCare(animal)){
             careSet.add(animal);
         }
@@ -20,7 +20,7 @@ public class CareTask {
         }
     }
 
-    public void displayCare(){
+    public static void displayCare(){
         for (Animal animal:careSet){
             System.out.println("this animal is being taking care off : "+ animal);
         }

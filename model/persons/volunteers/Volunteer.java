@@ -8,12 +8,10 @@ import java.util.*;
 public class Volunteer extends Person {
     private boolean availability;
     private Set<String> skills = new HashSet<>();
-    private boolean assignmentStatus;
 
-    public Volunteer(String id, String name, int age, boolean availability, boolean assignmentStatus) {
+    public Volunteer(String id, String name, int age, boolean availability) {
         super(id, name, age);
         this.availability = availability;
-        this.assignmentStatus = assignmentStatus;
     }
 
     public void addSkill(String skill) {
@@ -36,7 +34,7 @@ public class Volunteer extends Person {
 
     public void display(){
         System.out.println("id : " + getId() + ", name : " + getName() + ", age : " + getAge() +
-                ", availabilty : " + availability + ", assignement status : " + assignmentStatus + ", skills : ");
+                ", availabilty : " + availability + ", skills : ");
         displaySkill();
     }
 
