@@ -11,6 +11,10 @@ public abstract class AerialAnimal extends Animal {
         this.canFly = canFly;
     }
 
+    public void setCanFly(boolean canFly) {
+        this.canFly = canFly;
+    }
+
     public boolean getCanFly(){
         return canFly;
     }

@@ -14,4 +14,7 @@ public abstract class AquaticAnimal extends Animal {
     public boolean getScales(){
         return scales;
     }
+    public void setScales(boolean scales){
+        this.scales=scales;
+    }
 }
