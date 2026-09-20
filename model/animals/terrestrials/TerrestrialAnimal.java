@@ -15,4 +15,7 @@ public abstract class TerrestrialAnimal extends Animal {
     public String getSubType(){
         return subType;
     }
+    public void setSubType(String subType){
+        this.subType=subType;
+    }
 }
