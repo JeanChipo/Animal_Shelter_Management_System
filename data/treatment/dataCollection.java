@@ -125,8 +125,7 @@ public class dataCollection {
         try {
             verifyEntry(animal);
             try (Writer db = new BufferedWriter(new FileWriter(path, true))) {
-                db.append(id + animal.toStore());
-                db.append(System.lineSeparator());
+                db.append(id + "#" + animal.toStore() + '\n');
             }
             id++;
         } catch (InvalidEntryException e) {
@@ -168,6 +167,24 @@ public class dataCollection {
         }
     }
 
+    public String formatOutput(String in) {
+        String[] attributes = {
+                "ID", "Name", "Address", "Arrival date", "Adopted",
+                "Age", "Blood type", "Type-specific attribute", "Specificities"
+        };
+        String out = "";
+        int cpt = 0;
+
+        for (String value : in.split("#")) {
+            if (!value.isBlank()) {
+                String attribute = attributes[cpt];
+                out += "| " + attribute + ": " + value.trim() + "\n";
+                cpt++;
+            }
+        }
+        return out;
+    }
+
     public String listDataBase(String filePath) {
         File db = new File(filePath);
         String output = "";
@@ -179,6 +196,7 @@ public class dataCollection {
         } catch (FileNotFoundException e) {
             throw new NoSuchElementException("database not found");
         }
+        output = formatOutput(output) + "\n";
         return (output.isBlank()) ? "no animals found in database" : output;
     }
 }
