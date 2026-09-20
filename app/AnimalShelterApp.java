@@ -3,7 +3,11 @@ package app;
 import java.util.Scanner;
 
 import data.treatment.dataCollection;
+import model.animals.Animal;
+import model.animals.aerials.species.Dodo;
 import repository.MenuOption;
+import java.sql.Date;
+
 
 import data.treatment.*;;
 
@@ -13,16 +17,16 @@ public class AnimalShelterApp {
 
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
-
-            dataCollection collectionOfDatas;
+            
+            dataCollection collectionOfDatas = new dataCollection();
             MenuOption requestType;
             
             do{
                 requestType = getRequest(scanner);
                 if (requestType != MenuOption.END) {
-                    System.out.println("test ok");
-                    //displayInfos(collectionOfDatas, requestType);
-                                }
+                    if (shouldDisplay(requestType, scanner, collectionOfDatas)) {
+                    }
+                }
                             
             } while (requestType != MenuOption.END);
             
@@ -40,8 +44,7 @@ public class AnimalShelterApp {
                 + "1 - List of the animals\n"
                 + "2 - Adopt an animal\n"
                 + "3 - Add an animal\n"
-                + "4 - Update an animal informations\n"
-                + "5 - End the programm");
+                + "4 - End the programm");
 
         while (true) {
 
@@ -69,18 +72,18 @@ public class AnimalShelterApp {
     }
 
 
-    private static boolean shouldDisplay(MenuOption option, double balance) {
+    private static boolean shouldDisplay(MenuOption option, Scanner scanner, dataCollection data) {
                 switch (option) {
                         case VIEW:
-                            System.out.println("view");
-                            // data.listDataBase(FILE_NAME);
+                            System.out.println(data.listDataBase(FILE_NAME));
                             return true;
                         case ADOPT:
                             System.out.println("adopt");
                             return true;
                         case ADD:
                             System.out.println("add");
-                            // data.addToDataBase(<la data à rajouter>);
+                            Dodo dod = new Dodo("Kiko", "Male", Date.valueOf("2021-04-18"), false, 4, "Healthy");
+                            data.addToDataBase(dod);
                             return true;
                         case END:
                             return false;
