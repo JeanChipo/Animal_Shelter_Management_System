@@ -4,7 +4,7 @@ public enum MenuOption {
     VIEW(1),
     ADOPT(2),
     ADD(3),
-    UPDATE(4),
+    REMOVE(4),
     END(5),
     TEST(6);
 

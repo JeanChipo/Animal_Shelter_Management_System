@@ -71,6 +71,25 @@ public class AnimalShelterApp {
         }
     }
 
+//    private static void displayInfos(dataCollection collectionOfData, MenuOption option){
+//
+//        String description =switch (option){
+//            case VIEW -> "View all animals";
+//            case ADOPT -> "Adopt an animal";
+//            case ADD -> "Add an animal",
+//            case REMOVE -> "Remove an animal",
+//            case TEST -> "Test the program";
+//            case END -> "End the program";
+//        };
+//
+//        System.out.printf("%n%s:%n%n", description);
+//
+//        try{
+//
+//        }
+//    }
+
+
 
     private static boolean shouldDisplay(MenuOption option, Scanner scanner, dataCollection data) {
                 switch (option) {
