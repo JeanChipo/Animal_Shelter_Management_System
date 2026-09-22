@@ -4,9 +4,8 @@ public enum MenuOption {
     VIEW(1),
     ADOPT(2),
     ADD(3),
-    REMOVE(4),
-    END(5),
-    TEST(6);
+    TEST(4),
+    END(5);
 
     private final int value;
 

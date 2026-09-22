@@ -168,19 +168,36 @@ public class dataCollection {
     }
 
     public String formatOutput(String in) {
+        // all labels in the same order as the ones in the database
         String[] attributes = {
                 "ID", "Name", "Address", "Arrival date", "Adopted",
                 "Age", "Blood type", "Type-specific attribute", "Specificities"
         };
         String out = "";
-        int cpt = 0;
 
-        for (String value : in.split("#")) {
-            if (!value.isBlank()) {
-                String attribute = attributes[cpt];
-                out += "| " + attribute + ": " + value.trim() + "\n";
-                cpt++;
+        // split the database text into lotof separate rows, one animal per line
+        String[] rows = in.split("\n");
+        for (String row : rows) {
+            if (row == null || row.isBlank()) {
+                continue;
             }
+
+            // each row is stored as a string array, with each attribute separated by #
+            String[] values = row.split("#");
+            if (values.length < 2) {
+                continue;
+            }
+
+            // cpt to track at which attribute label we are
+            int cpt = 0;
+            for (String value : values) {
+                if (!value.isBlank() && cpt < attributes.length) {
+                    out += "| " + attributes[cpt] + ": " + value.trim() + "\n";
+                    cpt++;
+                }
+            }
+            // add a blank line between animals
+            out += "\n";
         }
         return out;
     }
