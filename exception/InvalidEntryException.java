@@ -1,4 +1,4 @@
-package data.treatment;
+package exception;
 
 public class InvalidEntryException extends Exception {
     public InvalidEntryException(String msg) {

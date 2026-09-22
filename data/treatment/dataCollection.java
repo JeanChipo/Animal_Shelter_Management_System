@@ -1,5 +1,6 @@
 package data.treatment;
 
+import exception.InvalidEntryException;
 import model.animals.Animal;
 
 import java.io.File;
