@@ -1,0 +1,15 @@
+1#Coco#Female#2022-05-10#false#2#Healthy#false#Lays eggs
+2#Quito#Male#2020-11-08#false#6#Healthy#true#Glides#
+3#Shoe#Male#2019-08-12#false#5#Healthy#true#Big beak#
+4#Wedge#Female#2021-06-15#false#3#Healthy#true#Sharp eyes#
+5#Mango#Female#2023-02-03#false#1#Healthy#false#Deep sea swimmer#
+6#Shell#Male#2022-09-07#false#2#Healthy#false#Colorful claws#
+7#Snap#Male#2018-04-22#false#8#Healthy#false#Fast snap#
+8#Wally#Female#2021-12-05#false#7#Healthy#false#Huge filter feeder#
+9#Yeti#Female#2024-01-09#false#1#Healthy#false#Cold-loving crab#
+10#Spike#Male#2020-07-14#false#4#Healthy#arachnid#Venomous legs#
+11#Raja#Male#2019-03-19#false#6#Healthy#feline#Royal stripes#
+12#Hugo#Male#2016-10-04#false#14#Healthy#mammal#Very clever#
+13#Rino#Female#2017-11-02#false#9#Healthy#mammal#Strong horn#
+14#Komo#Female#2018-06-30#false#7#Healthy#lizard#Apex predator#
+15#Kiko#Male#2021-04-18#true#4#Healthy#false##
